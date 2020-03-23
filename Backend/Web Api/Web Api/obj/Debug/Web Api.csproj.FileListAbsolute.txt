@@ -78,7 +78,6 @@ D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\System
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\System.Web.WebPages.Razor.xml
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\Antlr3.Runtime.pdb
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\obj\Debug\Web Api.csprojAssemblyReference.cache
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\obj\Debug\Web Api.csproj.CoreCompileInputs.cache
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\obj\Debug\Web Api.csproj.CopyComplete
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\obj\Debug\Web Api.dll
