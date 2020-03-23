@@ -1,0 +1,6 @@
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\bin\Debug\BL.dll
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\bin\Debug\BL.pdb
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\obj\Debug\BL.csprojAssemblyReference.cache
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\obj\Debug\BL.dll
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\obj\Debug\BL.pdb
