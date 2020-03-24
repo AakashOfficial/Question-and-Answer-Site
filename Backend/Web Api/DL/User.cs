@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DL
 {
-    class User
+    public class User
     {
         [Key]
         public int UserId { get; set; }
