@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace DL
 {
-    class QAContext : DbContext
+    public class QAContext : DbContext
     {
         public DbSet<User> user { get; set; }
 
