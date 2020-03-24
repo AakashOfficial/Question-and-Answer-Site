@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DL
 {
-    class Answer
+    public class Answer
     {
         [Key]
         public int AnswerId { get; set; }
@@ -20,11 +20,11 @@ namespace DL
 
         public int QuestionId { get; set; }
 
-        public virtual Question Question { get; set; }
+        // public virtual Question Question { get; set; }
 
         public int UserId { get; set; }
 
-        public virtual User User { get; set; }
+        // public virtual User User { get; set; }
 
         public virtual IList<UserReaction> Reactions { get; set; }
     }
