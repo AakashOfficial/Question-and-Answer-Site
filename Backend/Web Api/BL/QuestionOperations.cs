@@ -1,6 +1,7 @@
 ﻿using DL;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,24 @@ namespace BL
             return result;
         }
 
+        public bool editQuestion(Question question)
+        {
+            databaseContext.Entry(question).State = EntityState.Modified;
+            databaseContext.SaveChanges();
+            return true;
+        }
+
+        public bool addQuestion(Question question)
+        {
+            databaseContext.question.Add(question);
+            return true;
+        }
+
+        public bool deleteQuestion(int id)
+        {
+
+            return true;
+        }
 
     }
 }
