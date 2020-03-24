@@ -17,12 +17,18 @@ namespace Web_Api.Controllers
             questionoperation = new QuestionOperations();
         }
 
-        // GET api/<controller>/5
-        public List<Question> Get(int id)
+        // GET api/<controller>
+        public List<Question> GetAll()
         {
             var result = questionoperation.getQuestions();
             return result;
         }
+
+        // GET api/<controller>/5
+        // public IEnumerable<string> Get(int id)
+        //{//
+            
+        //}
 
         // POST api/<controller>
         public void Post([FromBody]string value)
