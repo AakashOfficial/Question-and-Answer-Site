@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DL
 {
-    class Question
+    public class Question
     {
         [Key]
         public int QuestionId { get; set; }
@@ -20,8 +21,9 @@ namespace DL
         public int QuestionActive { get; set; }
 
         public int UserId { get; set; }
-
-        public virtual User User { get; set; }
+       
+        // [ForeignKey("UserId")]
+        // public virtual User User { get; set; }
 
         public virtual IList<Answer> Answers { get; set; }
     }
