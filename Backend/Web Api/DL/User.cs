@@ -25,7 +25,7 @@ namespace DL
 
         public string UserProfilePicture { get; set; }
         [Required]
-        public string UserActive { get; set; }
+        public int UserActive { get; set; }
 
         public DateTime CreationDate { get; set; }
         public virtual IList<Question> Questions { get; set; }
