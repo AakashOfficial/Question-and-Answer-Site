@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DL
 {
-    class Tags
+    public class Tags
     {
         [Key]
         public int QuestionTagId { get; set; }
