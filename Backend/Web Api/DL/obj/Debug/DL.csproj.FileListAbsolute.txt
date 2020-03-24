@@ -9,5 +9,6 @@ D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\bin\Debug\Entit
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\bin\Debug\EntityFramework.xml
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\bin\Debug\EntityFramework.SqlServer.xml
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\obj\Debug\DL.csproj.CopyComplete
-D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\obj\Debug\DL.Migrations.First.resources
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\obj\Debug\DL.csprojAssemblyReference.cache
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\obj\Debug\DL.Migrations.Second.resources
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\obj\Debug\DL.csproj.GenerateResource.cache
