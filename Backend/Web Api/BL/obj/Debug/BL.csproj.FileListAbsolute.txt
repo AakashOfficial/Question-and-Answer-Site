@@ -4,3 +4,9 @@ D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\obj\Debug\BL.cs
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\obj\Debug\BL.dll
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\obj\Debug\BL.pdb
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\bin\Debug\DL.dll
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\bin\Debug\EntityFramework.dll
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\bin\Debug\DL.pdb
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\bin\Debug\DL.dll.config
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\bin\Debug\EntityFramework.xml
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\obj\Debug\BL.csproj.CopyComplete

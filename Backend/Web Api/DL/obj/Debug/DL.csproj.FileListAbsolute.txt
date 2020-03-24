@@ -3,3 +3,11 @@ D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\bin\Debug\DL.pd
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\obj\Debug\DL.csproj.CoreCompileInputs.cache
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\obj\Debug\DL.dll
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\obj\Debug\DL.pdb
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\bin\Debug\DL.dll.config
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\bin\Debug\EntityFramework.dll
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\bin\Debug\EntityFramework.xml
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\obj\Debug\DL.csproj.CopyComplete
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\obj\Debug\DL.Migrations.First.resources
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\DL\obj\Debug\DL.csproj.GenerateResource.cache

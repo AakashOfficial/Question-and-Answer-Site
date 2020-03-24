@@ -82,3 +82,8 @@ D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\obj\Debug\
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\obj\Debug\Web Api.csproj.CopyComplete
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\obj\Debug\Web Api.dll
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\obj\Debug\Web Api.pdb
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\EntityFramework.dll
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\EntityFramework.SqlServer.dll
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\EntityFramework.xml
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\EntityFramework.SqlServer.xml
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\obj\Debug\Web Api.csprojAssemblyReference.cache
