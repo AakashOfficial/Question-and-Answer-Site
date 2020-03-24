@@ -10,3 +10,6 @@ D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\bin\Debug\DL.pd
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\bin\Debug\DL.dll.config
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\bin\Debug\EntityFramework.xml
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\obj\Debug\BL.csproj.CopyComplete
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\bin\Debug\BL.dll.config
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\BL\bin\Debug\EntityFramework.SqlServer.xml
