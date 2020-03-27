@@ -25,5 +25,12 @@ namespace Web_Api.Controllers
             return result;
         }
 
+        // GET api/<controller>/5
+        [HttpGet]
+        public IEnumerable<Question> getQuestionById(int id)
+        {
+            var result = questionoperation.getById(id);
+            return result;
+        }
     }
 }
