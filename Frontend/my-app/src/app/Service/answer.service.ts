@@ -36,4 +36,10 @@ export class AnswerService {
         return this.http.post(this.completeUrl, answer)
     }
     
+    // to update the answer
+    UpdateAnswers(answer:Answer) {
+        this.completeUrl = this.baseUrl + 'updateAnswer' ;
+        return this.http.put(this.completeUrl, answer)
+    }
+
 }
