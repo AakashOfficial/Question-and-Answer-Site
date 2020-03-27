@@ -34,9 +34,9 @@ namespace Web_Api.Controllers
         }
 
         [HttpPut]
-        public void updateReaction(UserReaction userreaction)
+        public void updateReaction(int id)
         {
-            userReactionOperation.editReaction(userreaction);
+            userReactionOperation.editReaction(id);
         }
 
         [HttpDelete]
