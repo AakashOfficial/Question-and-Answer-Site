@@ -42,4 +42,11 @@ export class AnswerService {
         return this.http.put(this.completeUrl, answer)
     }
 
+    // activate answer by answerId
+    activateAnswer(id:number){
+        this.completeUrl = this.baseUrl + 'activateAnswer' ;
+        return this.http.put(this.completeUrl, id)
+    }
+
+
 }
