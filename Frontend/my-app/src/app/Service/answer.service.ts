@@ -24,5 +24,10 @@ export class AnswerService {
         return this.http.get(this.completeUrl+QuestionID)
     }
 
+    //get answer on basis of answerId 
+    getAnswerById(id:number) {
+        this.completeUrl = this.baseUrl + 'getAnswerById?id=' ;
+        return this.http.get(this.completeUrl+id)
+    }
 
 }
