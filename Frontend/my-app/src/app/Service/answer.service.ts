@@ -58,12 +58,18 @@ export class AnswerService {
     // to delete the answer by answerid
     deleteAnswer(id:number) {
         this.completeUrl = this.baseUrl + 'deleteAnswer?id' ;
-      return this.http.delete(this.completeUrl+id) 
+        return this.http.delete(this.completeUrl+id) 
     }
 
     // get all answer by the questionId
     getReactions(id : number) {
         this.completeUrl = this.userreactionUrl + 'getAllReaction?id=' ;
         return this.http.get(this.completeUrl+id)
+    }
+
+    // add userreaction to the database
+    addReaction(userreaction: UserReaction){
+        this.completeUrl = this.baseUrl + 'addReaction' ;
+        return this.http.post(this.completeUrl, userreaction)
     }
 }
