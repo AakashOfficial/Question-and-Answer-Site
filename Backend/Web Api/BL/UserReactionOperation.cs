@@ -22,5 +22,12 @@ namespace BL
             return output;
         }
 
+        public bool addReaction(UserReaction userreaction)
+        {
+            databaseContext.userreaction.Add(userreaction);
+            databaseContext.SaveChanges();
+            return true;
+        }
+
     }
 }
