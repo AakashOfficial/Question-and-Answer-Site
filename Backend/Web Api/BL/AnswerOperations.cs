@@ -102,5 +102,25 @@ namespace BL
             }
         }
 
+        public bool deleteAllAnswer(int id)
+        {
+            var output = databaseContext.answer.Where(d => d.QuestionId == id).ToList();
+            if(output != null)
+            {
+                foreach (var answers in output)
+                {
+                    UserReactionOperation userReactionOperation = new UserReactionOperation();
+                    userReactionOperation.deleteAllReaction(answers.AnswerId);
+                    databaseContext.answer.Remove(answers);
+                }
+                databaseContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }
