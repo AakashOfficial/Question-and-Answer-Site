@@ -34,5 +34,11 @@ export class QuestionService {
         return this.http.put(this.questionBaseUrl, {question,tag}) 
     }
 
-   
+    // activate the question by questionId
+    activeQuestion(id:number){
+        this.questionBaseUrl = 'https://localhost:44302/api/question/activateQuestion';
+        return this.http.put(this.questionBaseUrl,{id})
+    }
+
+
 }
