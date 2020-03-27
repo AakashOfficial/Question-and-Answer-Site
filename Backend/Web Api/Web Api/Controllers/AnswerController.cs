@@ -47,5 +47,10 @@ namespace Web_Api.Controllers
             answerOperations.editAnswer(answer);
         }
 
+        [HttpDelete]
+        public void deleteAnswer(int id)
+        {
+            answerOperations.deleteAnswer(id);
+        }
     }
 }
