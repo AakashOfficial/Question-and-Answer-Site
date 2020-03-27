@@ -37,5 +37,13 @@ namespace BL
             }
         }
 
+        // for edit the answer
+        public bool editAnswer(Answer answer)
+        {
+            databaseContext.Entry(answer).State = EntityState.Modified;
+            databaseContext.SaveChanges();
+            return true;
+        }
+
     }
 }
