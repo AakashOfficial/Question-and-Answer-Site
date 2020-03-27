@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    class UserReactionOperation
+    public class UserReactionOperation
     {
         private QAContext databaseContext;
 
@@ -18,24 +18,9 @@ namespace BL
 
         public List<UserReaction> getReaction(int id)
         {
-            var output = databaseContext.userreaction.Where(d => d.AnswerId == id).ToList();
+            var output = databaseContext.userreaction.Where(d => d.AnswerId == id && d.ReactionActive == 1).ToList();
             return output;
         }
 
-        public bool addReaction(UserReaction userreaction)
-        {
-            databaseContext.userreaction.Add(userreaction);
-            return true;
-        }
-
-        public bool editReaction(UserReaction userreaction)
-        {
-            databaseContext.Entry(userreaction).State = EntityState.Modified;
-            return true;
-        }
-
-        public bool deleteReaction (int id){
-            return true;
-        }
     }
 }
