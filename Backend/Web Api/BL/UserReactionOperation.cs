@@ -36,5 +36,15 @@ namespace BL
             return true;
         }
 
+        public bool deleteReaction (int id){
+            var output = databaseContext.userreaction.Single(x => x.ReactionId == id);
+            if (output != null)
+            {
+                databaseContext.userreaction.Remove(output);
+                databaseContext.SaveChanges();
+            }
+            return true;
+        }
+
     }
 }
