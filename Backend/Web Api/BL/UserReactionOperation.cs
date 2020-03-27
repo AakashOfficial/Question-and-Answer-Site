@@ -79,5 +79,19 @@ namespace BL
             return true;
         }
 
+        public bool deactivateAllReaction(int id)
+        {
+            var output = databaseContext.userreaction.Where(d => d.AnswerId == id && d.ReactionActive == 1).ToList();
+
+            if (output != null)
+            {
+                foreach (var reactions in output)
+                {
+                    reactions.ReactionActive = 0;
+                }
+                databaseContext.SaveChanges();
+            }
+            return true;
+        }
     }
 }
