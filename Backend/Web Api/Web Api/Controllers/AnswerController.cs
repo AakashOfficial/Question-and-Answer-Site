@@ -35,5 +35,11 @@ namespace Web_Api.Controllers
             answerOperations.deactivateAnswer(id);
         }
 
+        [HttpPost]
+        public void addAnswer(Answer answer)
+        {
+            answerOperations.addAnswer(answer);
+        }
+
     }
 }
