@@ -18,7 +18,6 @@ namespace Web_Api.Controllers
             userReactionOperation = new UserReactionOperation();
         }
 
-
         [HttpGet]
         public IEnumerable<UserReaction> getAllReaction(int id)
         {
@@ -26,6 +25,15 @@ namespace Web_Api.Controllers
 
             return output;
         }
+
+
+        [HttpPost]
+        public void addReaction(UserReaction userreaction)
+        {
+            userReactionOperation.addReaction(userreaction);
+        }
+
         
+
     }
 }
