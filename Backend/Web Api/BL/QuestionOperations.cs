@@ -36,5 +36,10 @@ namespace BL
             return true;
         }
 
+        public IEnumerable<Question> getById (int id){
+            var output = databaseContext.question.ToList().Where(d => d.QuestionId == id);
+            return output;
+        }
+
     }
 }
