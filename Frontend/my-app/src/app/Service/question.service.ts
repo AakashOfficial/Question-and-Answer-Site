@@ -46,5 +46,9 @@ export class QuestionService {
         return this.http.put(this.questionBaseUrl,{id})
     }
 
-
+    // delete the question by questionId
+    deleteQuestion(id:number) {
+        this.questionBaseUrl = 'https://localhost:44302/api/question/deleteQuestion';
+        return this.http.delete(this.questionBaseUrl+id) 
+    }
 }
