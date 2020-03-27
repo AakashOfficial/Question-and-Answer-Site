@@ -83,5 +83,24 @@ namespace BL
                 return false;
             }
         }
+
+        public bool activateAnswer(int id)
+        {
+            var output = databaseContext.answer.Single(x => x.AnswerId == id);
+
+            if (output != null)
+            {
+                output.AnswerActive = 1;
+                UserReactionOperation userReactionOperation = new UserReactionOperation();
+                userReactionOperation.activateAllReaction(id);
+                databaseContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }
