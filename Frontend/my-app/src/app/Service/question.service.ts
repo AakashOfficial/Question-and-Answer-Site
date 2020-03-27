@@ -23,7 +23,7 @@ export class QuestionService {
 
     // get question by questionId
     getQuestionbyID(id:number) {   
-      this.completeUrl = this.baseUrl + 'getQuestionById';
+      this.completeUrl = this.baseUrl + 'getQuestionById?id=';
         return this.http.get(this.completeUrl+id)
     }
 
@@ -53,7 +53,7 @@ export class QuestionService {
 
     // delete the question by questionId
     deleteQuestion(id:number) {
-        this.completeUrl = this.baseUrl + 'deleteQuestion';
+        this.completeUrl = this.baseUrl + 'deleteQuestion?id=';
         return this.http.delete(this.completeUrl+id) 
     }
 }
