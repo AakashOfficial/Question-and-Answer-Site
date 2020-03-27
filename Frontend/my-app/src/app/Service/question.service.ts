@@ -42,13 +42,13 @@ export class QuestionService {
     // activate the question by questionId
     activeQuestion(id:number){
         this.completeUrl = this.baseUrl + 'activateQuestion';
-        return this.http.put(this.completeUrl,{id})
+        return this.http.put(this.completeUrl,id)
     }
 
     // deactivate the question by questionId
     deactiveQuestion(id:number){
         this.completeUrl = this.baseUrl + 'deactivateQuestion';
-        return this.http.put(this.completeUrl,{id})
+        return this.http.put(this.completeUrl,id)
     }
 
     // delete the question by questionId
