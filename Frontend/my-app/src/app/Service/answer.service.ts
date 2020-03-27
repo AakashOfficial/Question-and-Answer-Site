@@ -48,5 +48,10 @@ export class AnswerService {
         return this.http.put(this.completeUrl, id)
     }
 
+    // deactivate answer by answerId
+    deactivateAnswer(id:number){
+        this.completeUrl = this.baseUrl + 'deactivateAnswer' ;
+        return this.http.put(this.completeUrl, id)
+    }
 
 }
