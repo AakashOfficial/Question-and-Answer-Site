@@ -66,5 +66,22 @@ namespace BL
             return true;
         }
 
+        public bool deactivateAnswer(int id)
+        {
+            var output = databaseContext.answer.Single(x => x.AnswerId == id);
+
+            if(output != null)
+            {
+                output.AnswerActive = 0;
+                UserReactionOperation userReactionOperation = new UserReactionOperation();
+                userReactionOperation.deactivateAllReaction(id);
+                databaseContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
