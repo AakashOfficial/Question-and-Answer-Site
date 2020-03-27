@@ -56,5 +56,22 @@ namespace BL
             return true;
         }
 
+        public bool deactivateQuestion(int id)
+        {
+            var output = databaseContext.question.Single(x => x.QuestionId == id);
+            if(output != null)
+            {
+                output.QuestionActive = 0;
+                AnswerOperations answerOperations = new AnswerOperations();
+                answerOperations.deactivateAllAnswer(id);
+                databaseContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }
