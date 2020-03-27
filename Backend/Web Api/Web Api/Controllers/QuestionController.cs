@@ -53,5 +53,10 @@ namespace Web_Api.Controllers
             questionoperation.deactivateQuestion(id);
         }
 
+        [HttpPut]
+        public void activateQuestion(int id)
+        {
+            questionoperation.activateQuestion(id);
+        }
     }
 }
