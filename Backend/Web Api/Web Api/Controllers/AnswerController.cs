@@ -41,5 +41,11 @@ namespace Web_Api.Controllers
             answerOperations.addAnswer(answer);
         }
 
+        [HttpPut]
+        public void updateAnswer(Answer answer)
+        {
+            answerOperations.editAnswer(answer);
+        }
+
     }
 }
