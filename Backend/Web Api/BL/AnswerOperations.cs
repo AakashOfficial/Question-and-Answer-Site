@@ -139,5 +139,21 @@ namespace BL
             return true;
         }
 
+        public bool deactivateAllAnswer(int id)
+        {
+            var output = databaseContext.answer.Where(d => d.QuestionId == id && d.AnswerActive == 1).ToList();
+            if (output != null)
+            {
+                foreach (var answers in output)
+                {
+                    UserReactionOperation userReactionOperation = new UserReactionOperation();
+                    userReactionOperation.deactivateAllReaction(answers.AnswerId);
+                    answers.AnswerActive = 0;
+                    databaseContext.SaveChanges();
+                }
+            }
+
+            return true;
+        }
     }
 }
