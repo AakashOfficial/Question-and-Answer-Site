@@ -45,5 +45,12 @@ namespace BL
             return true;
         }
 
+        // for add the answer
+        public bool addAnswer(Answer answer)
+        {
+            databaseContext.answer.Add(answer);
+            databaseContext.SaveChanges();
+            return true;
+        }
     }
 }
