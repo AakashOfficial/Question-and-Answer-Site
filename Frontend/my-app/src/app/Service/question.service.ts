@@ -1,0 +1,19 @@
+import { Injectable } from '@angular/core';
+import {HttpClient,HttpHeaders} from '@angular/common/http';
+import { Observable,of ,throwError, from} from 'rxjs';
+import { catchError, tap, map } from 'rxjs/operators';
+import {User} from 'src/app/Model/user';
+import {Question} from  'src/app/Model/question';
+import {Tags} from 'src/app/Model/Tags';
+
+export class QuestionService {
+    private questionBaseUrl ;
+
+    constructor(private http: HttpClient) { }
+
+    getQuestions(){   
+      this.questionBaseUrl = 'https://localhost:44302/api/question/getAllQuestion';
+        return this.http.get(this.questionBaseUrl)
+    }
+   
+}
