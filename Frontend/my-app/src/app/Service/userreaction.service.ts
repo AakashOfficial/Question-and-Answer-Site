@@ -33,5 +33,9 @@ export class UserReactionServie {
         return this.http.put(this.completeUrl, id)
     }
 
-
+    // delete the userreaction by the userReactionId
+    deleteUserReaction(id:number){
+        this.completeUrl = this.baseUrl + 'deleteReaction' ;
+        return this.http.delete(this.completeUrl+id) 
+    }
 }
