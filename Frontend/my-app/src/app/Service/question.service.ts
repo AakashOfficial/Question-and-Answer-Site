@@ -6,6 +6,10 @@ import {User} from 'src/app/Model/user';
 import {Question} from  'src/app/Model/question';
 import {Tags} from 'src/app/Model/Tags';
 
+@Injectable({
+    providedIn: 'root'
+  })
+  
 export class QuestionService {
     private questionBaseUrl ;
 
