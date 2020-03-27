@@ -1,5 +1,5 @@
 
-export class User
+export class Tags
 {
     QuestionTagId   :number;
     TagName :string;
