@@ -14,6 +14,7 @@ import {Question} from 'src/app/Model/question';
 export class AnswerService {
 
     private baseUrl ='https://localhost:44302/api/answer/';
+    private userreactionUrl = 'https://localhost:44302/api/userreaction/';
     private completeUrl = '' ;
 
     constructor(private http: HttpClient) { }
@@ -58,5 +59,11 @@ export class AnswerService {
     deleteAnswer(id:number) {
         this.completeUrl = this.baseUrl + 'deleteAnswer?id' ;
       return this.http.delete(this.completeUrl+id) 
+    }
+
+    // get all answer by the questionId
+    getReactions(id : number) {
+        this.completeUrl = this.userreactionUrl + 'getAllReaction?id=' ;
+        return this.http.get(this.completeUrl+id)
     }
 }
