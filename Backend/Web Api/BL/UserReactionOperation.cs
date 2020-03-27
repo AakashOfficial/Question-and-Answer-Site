@@ -29,5 +29,12 @@ namespace BL
             return true;
         }
 
+        public bool editReaction(UserReaction userreaction)
+        {
+            databaseContext.Entry(userreaction).State = EntityState.Modified;
+            databaseContext.SaveChanges();
+            return true;
+        }
+
     }
 }
