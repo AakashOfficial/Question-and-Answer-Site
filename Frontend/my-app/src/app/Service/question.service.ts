@@ -11,48 +11,49 @@ import {Tags} from 'src/app/Model/Tags';
 })
 
 export class QuestionService {
-    private questionBaseUrl ;
+    private baseUrl ='https://localhost:44302/api/question/';
+    private completeUrl = '' ;
 
     constructor(private http: HttpClient) { }
 
     getQuestions(){   
-      this.questionBaseUrl = 'https://localhost:44302/api/question/getAllQuestion';
-        return this.http.get(this.questionBaseUrl)
+      this.completeUrl = this.baseUrl + 'getAllQuestion';
+        return this.http.get(this.completeUrl)
     }
 
     // get question by questionId
     getQuestionbyID(id:number) {   
-      this.questionBaseUrl = 'https://localhost:44302/api/question/getQuestionById';
-        return this.http.get(this.questionBaseUrl+id)
+      this.completeUrl = this.baseUrl + 'getQuestionById';
+        return this.http.get(this.completeUrl+id)
     }
 
     // add question to the database
     AddQuestion(question:Question,tag:Tags) {
-        this.questionBaseUrl = 'https://localhost:44302/api/question/AddQuestion';
-        return this.http.post(this.questionBaseUrl, {question,tag}) 
+        this.completeUrl = this.baseUrl + 'AddQuestion';
+        return this.http.post(this.completeUrl, {question,tag}) 
     }
 
     // update the question
     UpdateQuestion(question:Question,tag:Tags) {
-        this.questionBaseUrl = 'https://localhost:44302/api/question/updateQuestion';
-        return this.http.put(this.questionBaseUrl, {question,tag}) 
+        this.completeUrl = this.baseUrl + 'updateQuestion';
+        return this.http.put(this.completeUrl, {question,tag}) 
     }
 
     // activate the question by questionId
     activeQuestion(id:number){
-        this.questionBaseUrl = 'https://localhost:44302/api/question/activateQuestion';
-        return this.http.put(this.questionBaseUrl,{id})
+        this.completeUrl = this.baseUrl + 'activateQuestion';
+        return this.http.put(this.completeUrl,{id})
     }
 
     // deactivate the question by questionId
     deactiveQuestion(id:number){
-        this.questionBaseUrl = 'https://localhost:44302/api/question/deactivateQuestion';
-        return this.http.put(this.questionBaseUrl,{id})
+        this.completeUrl = this.baseUrl + 'deactivateQuestion';
+        return this.http.put(this.completeUrl,{id})
     }
 
     // delete the question by questionId
     deleteQuestion(id:number) {
-        this.questionBaseUrl = 'https://localhost:44302/api/question/deleteQuestion';
-        return this.http.delete(this.questionBaseUrl+id) 
+        this.completeUrl = this.baseUrl + 'deleteQuestion';
+        return this.http.delete(this.completeUrl+id) 
     }
 }
