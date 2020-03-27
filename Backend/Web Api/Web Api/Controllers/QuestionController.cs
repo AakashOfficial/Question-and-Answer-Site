@@ -32,5 +32,13 @@ namespace Web_Api.Controllers
             var result = questionoperation.getById(id);
             return result;
         }
+
+        // POST api/<controller>
+        [HttpPost]
+        public void AddQuestion(Question question)
+        {
+            questionoperation.addQuestion(question);
+        }
+
     }
 }
