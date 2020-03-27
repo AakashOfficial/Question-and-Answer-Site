@@ -29,5 +29,11 @@ namespace Web_Api.Controllers
             answerOperations.activateAnswer(id);
         }
 
+        [HttpPut]
+        public void deactivateAnswer(int id)
+        {
+            answerOperations.deactivateAnswer(id);
+        }
+
     }
 }
