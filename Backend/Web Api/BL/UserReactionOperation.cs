@@ -29,9 +29,20 @@ namespace BL
             return true;
         }
 
-        public bool editReaction(UserReaction userreaction)
+        public bool editReaction(int id)
         {
-            databaseContext.Entry(userreaction).State = EntityState.Modified;
+            var output = databaseContext.userreaction.Single(x => x.ReactionId == id);
+            if(output != null)
+            {
+                if(output.ReactionType == 1)
+                {
+                    output.ReactionType = 0;
+                }
+                else
+                {
+                    output.ReactionType = 1;
+                }
+            }
             databaseContext.SaveChanges();
             return true;
         }
