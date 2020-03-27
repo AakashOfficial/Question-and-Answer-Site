@@ -22,4 +22,10 @@ export class QuestionService {
         return this.http.get(this.questionBaseUrl+id)
     }
 
+    // add question to the database
+    AddQuestion(question:Question,tag:Tags) {
+        this.questionBaseUrl = 'https://localhost:44302/api/question/AddQuestion';
+        return this.http.post(this.questionBaseUrl, {question,tag}) 
+    }
+
 }
