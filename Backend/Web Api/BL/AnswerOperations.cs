@@ -52,5 +52,19 @@ namespace BL
             databaseContext.SaveChanges();
             return true;
         }
+
+        public bool deleteAnswer(int id)
+        {
+            var output = databaseContext.answer.Single(x => x.AnswerId == id);
+            if(output != null)
+            {
+                databaseContext.answer.Remove(output);
+                UserReactionOperation userReactionOperation = new UserReactionOperation();
+                userReactionOperation.deleteAllReaction(id);
+                databaseContext.SaveChanges();
+            }
+            return true;
+        }
+
     }
 }
