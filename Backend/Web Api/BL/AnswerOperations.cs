@@ -23,5 +23,19 @@ namespace BL
             return result;
         }
 
+        // for getting the count of the Answers of a Question
+        public int getAnswerCount(int id) {
+            int count = 0;
+
+            count = databaseContext.answer.Where(d => d.QuestionId == id && d.AnswerActive == 1).Count();
+            if(count > 0){
+                return count;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
     }
 }
