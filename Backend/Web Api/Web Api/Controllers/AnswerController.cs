@@ -23,6 +23,12 @@ namespace Web_Api.Controllers
             return result;            
         }
 
+        [HttpGet]
+        public IEnumerable<Answer> getAnswerById(int id)
+        {
+            return null;
+        }
+
         [HttpPut]
         public void activateAnswer(int id)
         {
