@@ -30,5 +30,11 @@ namespace BL
             return true;
         }
 
+        public bool addQuestion(Question question)
+        {
+            databaseContext.question.Add(question);
+            return true;
+        }
+
     }
 }
