@@ -40,5 +40,12 @@ namespace Web_Api.Controllers
             questionoperation.addQuestion(question);
         }
 
+        [HttpPut]
+        // PUT api/<controller>/5
+        public void updateQuestion(Question question)
+        {
+            questionoperation.editQuestion(question);
+        }
+
     }
 }
