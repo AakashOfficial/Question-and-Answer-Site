@@ -8,8 +8,8 @@ import {Tags} from 'src/app/Model/Tags';
 
 @Injectable({
     providedIn: 'root'
-  })
-  
+})
+
 export class QuestionService {
     private questionBaseUrl ;
 
