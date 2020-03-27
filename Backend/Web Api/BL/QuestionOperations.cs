@@ -41,5 +41,20 @@ namespace BL
             return output;
         }
 
+        public bool deleteQuestion(int id)
+        {
+            var output = databaseContext.question.Single(x => x.QuestionId == id);
+            if(output != null)
+            {
+                databaseContext.question.Remove(output);
+
+                AnswerOperations answerOperations = new AnswerOperations();
+                answerOperations.deleteAllAnswer(id);
+                databaseContext.SaveChanges();
+            }
+            
+            return true;
+        }
+
     }
 }
