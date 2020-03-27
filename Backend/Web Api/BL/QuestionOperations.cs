@@ -23,5 +23,12 @@ namespace BL
             return result;
         }
 
+        public bool editQuestion(Question question)
+        {
+            databaseContext.Entry(question).State = EntityState.Modified;
+            databaseContext.SaveChanges();
+            return true;
+        }
+
     }
 }
