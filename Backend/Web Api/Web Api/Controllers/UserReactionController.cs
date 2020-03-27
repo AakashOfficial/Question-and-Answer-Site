@@ -39,6 +39,11 @@ namespace Web_Api.Controllers
             userReactionOperation.editReaction(userreaction);
         }
 
+        [HttpDelete]
+        public void deleteReaction(int id)
+        {
+            userReactionOperation.deleteReaction(id);
+        }
 
     }
 }
