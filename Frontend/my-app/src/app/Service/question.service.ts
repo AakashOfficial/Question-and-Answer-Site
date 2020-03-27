@@ -28,4 +28,11 @@ export class QuestionService {
         return this.http.post(this.questionBaseUrl, {question,tag}) 
     }
 
+    // update the question
+    UpdateQuestion(question:Question,tag:Tags) {
+        this.questionBaseUrl = 'https://localhost:44302/api/question/updateQuestion';
+        return this.http.put(this.questionBaseUrl, {question,tag}) 
+    }
+
+   
 }
