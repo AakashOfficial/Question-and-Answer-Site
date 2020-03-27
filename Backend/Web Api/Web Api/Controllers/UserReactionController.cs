@@ -33,7 +33,12 @@ namespace Web_Api.Controllers
             userReactionOperation.addReaction(userreaction);
         }
 
-        
+        [HttpPut]
+        public void updateReaction(UserReaction userreaction)
+        {
+            userReactionOperation.editReaction(userreaction);
+        }
+
 
     }
 }
