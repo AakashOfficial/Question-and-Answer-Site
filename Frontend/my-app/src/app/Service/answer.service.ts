@@ -54,4 +54,9 @@ export class AnswerService {
         return this.http.put(this.completeUrl, id)
     }
 
+    // to delete the answer by answerid
+    deleteAnswer(id:number) {
+        this.completeUrl = this.baseUrl + 'deleteAnswer?id' ;
+      return this.http.delete(this.completeUrl+id) 
+    }
 }
