@@ -58,5 +58,12 @@ namespace Web_Api.Controllers
         {
             questionoperation.activateQuestion(id);
         }
+
+        // DELETE api/<controller>/5
+        [HttpDelete]
+        public void deleteQuestion(int id)
+        {
+            questionoperation.deleteQuestion(id);
+        }
     }
 }
