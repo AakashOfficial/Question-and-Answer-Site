@@ -46,5 +46,23 @@ namespace BL
             return true;
         }
 
+        public bool deleteAllReaction(int id)
+        {
+            var output = databaseContext.userreaction.Where(d => d.AnswerId == id).ToList();
+            if (output != null)
+            {
+                foreach(var reactions in output)
+                {
+                    databaseContext.userreaction.Remove(reactions);
+                }
+                databaseContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }
