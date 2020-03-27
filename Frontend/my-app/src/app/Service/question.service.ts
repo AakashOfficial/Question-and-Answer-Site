@@ -15,5 +15,11 @@ export class QuestionService {
       this.questionBaseUrl = 'https://localhost:44302/api/question/getAllQuestion';
         return this.http.get(this.questionBaseUrl)
     }
-   
+
+    // get question by questionId
+    getQuestionbyID(id:number) {   
+      this.questionBaseUrl = 'https://localhost:44302/api/question/getQuestionById';
+        return this.http.get(this.questionBaseUrl+id)
+    }
+
 }
