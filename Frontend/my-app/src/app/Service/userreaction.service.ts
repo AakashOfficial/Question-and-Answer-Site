@@ -27,5 +27,11 @@ export class UserReactionServie {
         return this.http.post(this.completeUrl, userreaction)
     }
 
+    // update the userreaction by the userReactionId
+    updateUserReaction(id:number){
+        this.completeUrl = this.baseUrl + 'updateReaction' ;
+        return this.http.put(this.completeUrl, id)
+    }
+
 
 }
