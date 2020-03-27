@@ -18,31 +18,12 @@ namespace Web_Api.Controllers
         }
 
         // GET api/<controller>
-        public List<Question> GetAll()
+        [HttpGet]
+        public List<Question> getAllQuestion()
         {
             var result = questionoperation.getQuestions();
             return result;
         }
 
-        // GET api/<controller>/5
-        // public IEnumerable<string> Get(int id)
-        //{//
-            
-        //}
-
-        // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
     }
 }
