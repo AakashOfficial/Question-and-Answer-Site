@@ -8,7 +8,7 @@ import {UserReaction} from 'src/app/Model/userreaction';
 
 @Injectable({
     providedIn: 'root'
-  })
+})
 
 export class AnswerService {
 
