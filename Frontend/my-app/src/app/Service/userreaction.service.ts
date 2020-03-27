@@ -21,5 +21,11 @@ export class UserReactionServie {
         return this.http.get(this.completeUrl+AnswerId)
     }
     
-    
+    // add userreaction to the database
+    addReaction(userreaction: UserReaction){
+        this.completeUrl = this.baseUrl + 'addReaction' ;
+        return this.http.post(this.completeUrl, userreaction)
+    }
+
+
 }
