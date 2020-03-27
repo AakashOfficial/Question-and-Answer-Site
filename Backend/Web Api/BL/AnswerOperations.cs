@@ -122,5 +122,22 @@ namespace BL
             }
         }
 
+        public bool activateAllAnswer(int id)
+        {
+            var output = databaseContext.answer.Where(d => d.QuestionId == id && d.AnswerActive == 0).ToList();
+            if(output != null)
+            {
+                foreach (var answers in output)
+                {
+                    UserReactionOperation userReactionOperation = new UserReactionOperation();
+                    userReactionOperation.activateAllReaction(answers.AnswerId);
+                    answers.AnswerActive = 1;
+                    databaseContext.SaveChanges();
+                }
+            }
+
+            return true;
+        }
+
     }
 }
