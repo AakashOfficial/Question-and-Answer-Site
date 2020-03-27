@@ -30,4 +30,10 @@ export class AnswerService {
         return this.http.get(this.completeUrl+id)
     }
 
+    // to save the answer in backend
+    AddAnswers(answer:Answer) {
+        this.completeUrl = this.baseUrl + 'addAnswer' ;
+        return this.http.post(this.completeUrl, answer)
+    }
+    
 }
