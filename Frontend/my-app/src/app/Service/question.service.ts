@@ -40,5 +40,11 @@ export class QuestionService {
         return this.http.put(this.questionBaseUrl,{id})
     }
 
+    // deactivate the question by questionId
+    deactiveQuestion(id:number){
+        this.questionBaseUrl = 'https://localhost:44302/api/question/deactivateQuestion';
+        return this.http.put(this.questionBaseUrl,{id})
+    }
+
 
 }
