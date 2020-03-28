@@ -24,7 +24,7 @@ namespace Web_Api.Controllers
         }
 
         // GET api/<controller>/5
-        public IEnumerable<User> Get(int id)
+        public IEnumerable<User> getUserbyId(int id)
         {
             var output = useroperation.getUser(id);
             return output;
