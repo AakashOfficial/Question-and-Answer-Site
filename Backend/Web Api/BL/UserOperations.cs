@@ -20,9 +20,18 @@ namespace BL
         // For adding the User
         public bool addUser(User user)
         {
-            databaseContext.user.Add(user);
-            databaseContext.SaveChanges();
-            return true;
+            var userData = databaseContext.user.Where(x => x.UserEmail == user.UserEmail);
+            if(userData == null)
+            {
+                databaseContext.user.Add(user);
+                databaseContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
         public IEnumerable<User> getUser(int id)
@@ -36,6 +45,12 @@ namespace BL
             databaseContext.Entry(user).State = EntityState.Modified;
             databaseContext.SaveChanges();
             return true;
+        }
+
+        public IEnumerable<User> findUser(string email,string password)
+        {
+            var result = databaseContext.user.ToList().Where(d => d.UserEmail == email && d.UserPassword == password);
+            return result;
         }
     }
 }
