@@ -10,9 +10,13 @@ import {User} from '../Model/user';
 
 export class RegisterService {
 
-    private productsUrl  ;
+    private baseUrl ='https://localhost:44302/api/user/';
+    private completeUrl ;
 
     constructor(private http: HttpClient) { }
 
-    
+    createProduct(user:User) {
+        this.completeUrl = this.baseUrl + '';
+        return this.http.post(this.completeUrl, user) 
+    }
 }
