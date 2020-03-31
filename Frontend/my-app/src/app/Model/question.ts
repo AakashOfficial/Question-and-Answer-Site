@@ -1,9 +1,11 @@
 
 export class Question
 {
-    QuestionId   :number;
-    QuestionName :string;
-    CreationDate :string;
+    QuestionId : number;
+    QuestionName : string;
+    CreationDate : string;
     QuestionActive : number;
-    UserId :number;
+    UserId : number;
+    QuestionTitle : string;
+    TagId: number;
 }
