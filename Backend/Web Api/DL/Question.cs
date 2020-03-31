@@ -22,7 +22,9 @@ namespace DL
         public int QuestionActive { get; set; }
 
         public int UserId { get; set; }
-        
+
+        public string QuestionImage { get; set; }
+
         public int TagId { get; set; }
 
         public virtual Tags Tags { get; set; }
