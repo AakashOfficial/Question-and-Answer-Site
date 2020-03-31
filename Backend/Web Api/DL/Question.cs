@@ -25,7 +25,7 @@ namespace DL
 
         public string QuestionImage { get; set; }
 
-        public int QuestionId { get; set; }
+        public int QuestionTagId { get; set; }
 
         public virtual Tags Tags { get; set; }
 
