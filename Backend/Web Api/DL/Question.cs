@@ -21,9 +21,10 @@ namespace DL
         public int QuestionActive { get; set; }
 
         public int UserId { get; set; }
-       
+        
+        public int TagId { get; set; }
         // [ForeignKey("UserId")]
-        // public virtual User User { get; set; }
+        //public virtual User User { get; set; }
 
         public virtual IList<Answer> Answers { get; set; }
     }
