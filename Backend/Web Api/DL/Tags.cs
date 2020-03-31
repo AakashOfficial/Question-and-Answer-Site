@@ -10,7 +10,7 @@ namespace DL
     public class Tags
     {
         [Key]
-        public int QuestionId { get; set; }
+        public int QuestionTagId { get; set; }
 
         public string TagName { get; set; }
 
