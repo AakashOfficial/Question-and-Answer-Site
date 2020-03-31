@@ -11,10 +11,12 @@ namespace BL
     public class QuestionOperations
     {
         private QAContext databaseContext;
+        private TagsOperations tagsOperations;
 
         public QuestionOperations()
         {
             databaseContext = new QAContext();
+            tagsOperations = new TagsOperations();
         }
 
         public List<Question> getQuestions()
@@ -23,15 +25,18 @@ namespace BL
             return result;
         }
 
-        public bool editQuestion(Question question)
+        public bool editQuestion(Question question, Tags tags)
         {
             databaseContext.Entry(question).State = EntityState.Modified;
+            tagsOperations.updateTags(tags);
             databaseContext.SaveChanges();
             return true;
         }
 
-        public bool addQuestion(Question question)
+        public bool addQuestion(Question question, Tags tags)
         {
+            var tagId = tagsOperations.addTags(tags);
+            question.TagId = tagId;
             databaseContext.question.Add(question);
             return true;
         }
