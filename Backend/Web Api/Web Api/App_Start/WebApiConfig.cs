@@ -11,6 +11,7 @@ namespace Web_Api
         {
             // Web API configuration and services
 
+            config.EnableCors();
             // Web API routes
             config.MapHttpAttributeRoutes();
 
