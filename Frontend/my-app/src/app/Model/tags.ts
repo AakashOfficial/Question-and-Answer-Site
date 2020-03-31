@@ -1,7 +1,7 @@
 
 export class Tags
 {
-    TagId :number;
+    QuestionTagId :number;
     TagName :string;
     CreationDate :string;
     TagActive :number;
