@@ -22,13 +22,13 @@ namespace BL
 
             if (output)
             {
-                return databaseContext.tags.FirstOrDefault(x => x.TagName == tags.TagName).TagId;
+                return databaseContext.tags.FirstOrDefault(x => x.TagName == tags.TagName).QuestionTagId;
             }
 
             databaseContext.tags.Add(tags);
             databaseContext.SaveChanges();
 
-            return databaseContext.tags.FirstOrDefault(x => x.TagName == tags.TagName).TagId;
+            return databaseContext.tags.FirstOrDefault(x => x.TagName == tags.TagName).QuestionTagId;
         }
 
         public void updateTags(Tags tags)
