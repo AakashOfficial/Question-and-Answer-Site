@@ -7,5 +7,6 @@ export class Question
     QuestionActive : number;
     UserId : number;
     QuestionTitle : string;
-    TagId: number;
+    QuestionTagId: number;
+    QuestionImage : string;
 }
