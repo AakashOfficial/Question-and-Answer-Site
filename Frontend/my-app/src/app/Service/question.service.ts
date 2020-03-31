@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient,HttpHeaders} from '@angular/common/http';
+import {HttpClientModule,HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable,of ,throwError, from} from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import {User} from 'src/app/Model/user';
@@ -17,7 +17,8 @@ export class QuestionService {
     constructor(private http: HttpClient) { }
 
     getQuestions(){   
-      this.completeUrl = this.baseUrl + 'getAllQuestion';
+        this.completeUrl = this.baseUrl + 'getAllQuestion';
+        // console.log(this.completeUrl);
         return this.http.get(this.completeUrl)
     }
 
