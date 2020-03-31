@@ -31,5 +31,10 @@ namespace BL
             return databaseContext.tags.FirstOrDefault(x => x.TagName == tags.TagName).TagId;
         }
 
+        public void updateTags(Tags tags)
+        {
+            databaseContext.Entry(tags).State = EntityState.Modified;
+            databaseContext.SaveChanges();
+        }
     }
 }
