@@ -54,5 +54,19 @@ namespace BL
             var result = databaseContext.user.ToList().Where(d => d.UserEmail == email && d.UserPassword == password);
             return result;
         }
+
+        public int validate(string email, string password)
+        {
+            var result = databaseContext.user.ToList().Where(d => d.UserEmail == email && d.UserPassword == password).FirstOrDefault();
+            if(result != null)
+            {
+                return result.UserId;
+            }
+            else
+            {
+                return 0;
+            }
+            
+        }
     }
 }
