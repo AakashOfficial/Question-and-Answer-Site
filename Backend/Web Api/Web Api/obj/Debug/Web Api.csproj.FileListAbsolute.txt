@@ -93,3 +93,6 @@ D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\BL.pdb
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\BL.dll.config
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\DL.pdb
 D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\DL.dll.config
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\System.Web.Cors.dll
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\System.Web.Http.Cors.dll
+D:\Learning\Projects\Question and Answer Site\Backend\Web Api\Web Api\bin\System.Web.Http.Cors.xml
