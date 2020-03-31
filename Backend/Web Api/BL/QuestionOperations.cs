@@ -36,7 +36,7 @@ namespace BL
         public bool addQuestion(Question question, Tags tags)
         {
             var tagId = tagsOperations.addTags(tags);
-            question.TagId = tagId;
+            question.QuestionTagId = tagId;
             databaseContext.question.Add(question);
             return true;
         }
