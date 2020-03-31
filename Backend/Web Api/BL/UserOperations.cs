@@ -20,8 +20,10 @@ namespace BL
         // For adding the User
         public bool addUser(User user)
         {
-            var userData = databaseContext.user.Where(x => x.UserEmail == user.UserEmail);
-            if(userData == null)
+            System.Diagnostics.Debug.WriteLine(user.UserEmail);
+            var userData = databaseContext.user.Where(x => x.UserEmail == user.UserEmail).Count();
+            System.Diagnostics.Debug.WriteLine(userData);
+            if (userData == 0)
             {
                 databaseContext.user.Add(user);
                 databaseContext.SaveChanges();
