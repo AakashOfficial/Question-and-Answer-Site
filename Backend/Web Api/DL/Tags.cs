@@ -10,16 +10,12 @@ namespace DL
     public class Tags
     {
         [Key]
-        public int QuestionTagId { get; set; }
+        public int TagId { get; set; }
 
         public string TagName { get; set; }
-
-        public int QuestionId { get; set; }
 
         public DateTime CreationDate { get; set; }
 
         public int TagActive { get; set; }
-
-        public virtual Question Question { get; set; }
     }
 }
