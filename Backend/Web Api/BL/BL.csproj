@@ -54,6 +54,7 @@
     <Compile Include="AnswerOperations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionOperations.cs" />
+    <Compile Include="TagsOperations.cs" />
     <Compile Include="UserOperations.cs" />
     <Compile Include="UserReactionOperation.cs" />
   </ItemGroup>
