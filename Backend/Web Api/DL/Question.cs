@@ -24,6 +24,9 @@ namespace DL
         public int UserId { get; set; }
         
         public int TagId { get; set; }
+
+        public virtual Tags Tags { get; set; }
+
         // [ForeignKey("UserId")]
         //public virtual User User { get; set; }
 
