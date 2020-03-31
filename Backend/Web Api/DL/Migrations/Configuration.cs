@@ -33,8 +33,8 @@
 
             var question = new List<Question> 
             {
-                new Question{ QuestionId = 1 , UserId = 1 , QuestionName = "What is the capital of India" , CreationDate = DateTime.Parse("2020-03-24") , QuestionActive = 1 , QuestionTitle = "India Capital", TagId = 1,},
-                new Question{ QuestionId = 2 , UserId = 2 , QuestionName = "What is the capital of Uttar Pradesh" , CreationDate = DateTime.Parse("2020-03-24") , QuestionActive = 1 , QuestionTitle = "UP Capital", TagId = 2,}
+                new Question{ QuestionId = 1 , UserId = 1 , QuestionName = "What is the capital of India" , CreationDate = DateTime.Parse("2020-03-24") , QuestionActive = 1 , QuestionTitle = "India Capital", QuestionTagId = 1,},
+                new Question{ QuestionId = 2 , UserId = 2 , QuestionName = "What is the capital of Uttar Pradesh" , CreationDate = DateTime.Parse("2020-03-24") , QuestionActive = 1 , QuestionTitle = "UP Capital", QuestionTagId = 2,}
             };
 
             question.ForEach(s => context.question.AddOrUpdate(p => p.QuestionName, s));
@@ -51,8 +51,8 @@
 
             var tags = new List<Tags>
             {
-                new Tags{ TagId = 1, TagName = "National Capital" , CreationDate = DateTime.Parse("2020-03-24") , TagActive = 1 , },
-                new Tags{ TagId = 2, TagName = "Capital" , CreationDate = DateTime.Parse("2020-03-24") , TagActive = 1 , }
+                new Tags{ QuestionTagId = 1, TagName = "National Capital" , CreationDate = DateTime.Parse("2020-03-24") , TagActive = 1 , },
+                new Tags{ QuestionTagId = 2, TagName = "Capital" , CreationDate = DateTime.Parse("2020-03-24") , TagActive = 1 , }
             };
 
             tags.ForEach(s => context.tags.AddOrUpdate(p => p.TagName, s));
