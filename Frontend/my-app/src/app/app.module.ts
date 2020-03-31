@@ -12,6 +12,11 @@ import {LoginComponent} from './user/login/login.component';
 import {RegisterComponent} from './user/register/register.component';
 import { AddquestionComponent } from './question/addquestion/addquestion.component' ;
 import { EditquestionComponent } from './question/editquestion/editquestion.component' ;
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './home/navbar/navbar.component';
+import { DefaultComponent } from './default/default.component';
+import { DefaultnavComponent } from './default/defaultnav/defaultnav.component';
+import { MyquestionComponent } from './question/myquestion/myquestion.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { EditquestionComponent } from './question/editquestion/editquestion.comp
     LoginComponent,
     RegisterComponent,
     AddquestionComponent,
-    EditquestionComponent
+    EditquestionComponent,
+    HomeComponent,
+    NavbarComponent,
+    DefaultComponent,
+    DefaultnavComponent,
+    MyquestionComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +38,10 @@ import { EditquestionComponent } from './question/editquestion/editquestion.comp
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
+      { path: "" , component : DefaultComponent},
+      { path: "default" , component : DefaultComponent},
+      { path: "myquestion" , component : MyquestionComponent},
+      { path: "home" , component : HomeComponent},
       { path: "login" , component : LoginComponent},
       { path: "register" , component : RegisterComponent},
       { path: "addquestion" , component : AddquestionComponent},
