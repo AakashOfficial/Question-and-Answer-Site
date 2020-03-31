@@ -4,11 +4,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using BL;
 using DL;
 
 namespace Web_Api.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UserController : ApiController
     {
         private UserOperations useroperation;
@@ -30,9 +32,25 @@ namespace Web_Api.Controllers
             return output;
         }
 
-        // POST api/<controller>
-        public void Post([FromBody]string value)
+        // GET api/user/validateUser
+        [HttpGet]
+        public int ValidateUser(string email, string password)
         {
+            if(email == "" || password == "")
+            {
+                return 0;
+            }
+            var userId = useroperation.validate(email, password);
+            return userId;
+        }
+
+        // POST api/<controller>
+        [HttpPost]
+        public User addUser(User user)
+        {
+            var output = useroperation.addUser(user);
+            return user;
+            // return output;
         }
 
         // PUT api/<controller>/5
