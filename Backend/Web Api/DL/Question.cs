@@ -16,6 +16,7 @@ namespace DL
         [Required(ErrorMessage = "Please Enter Event Date")]
         public string QuestionName { get; set; }
 
+        public string QuestionTitle { get; set; }
         public DateTime CreationDate { get; set; }
 
         public int QuestionActive { get; set; }
