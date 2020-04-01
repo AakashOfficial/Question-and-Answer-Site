@@ -34,12 +34,8 @@ namespace Web_Api.Controllers
 
         // GET api/user/validateUser
         [HttpGet]
-        public int ValidateUser(string email, string password)
+        public User ValidateUser(string email, string password)
         {
-            if(email == "" || password == "")
-            {
-                return 0;
-            }
             var userId = useroperation.validate(email, password);
             return userId;
         }
