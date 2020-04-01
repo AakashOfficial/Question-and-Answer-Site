@@ -1,0 +1,64 @@
+<app-navbar> </app-navbar>
+
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="/assets/rocket-image.png" alt="" />
+            <h3>Welcome</h3>
+            <p>Edit your Question</p>
+            <input type="submit" value="Search" (click)="search()" /><br/>
+        </div>
+        <div class="col-md-9 register-right">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <form (ngSubmit)="updateQuestion()" [formGroup]="form">
+                        <h3 class="register-heading">Edit Question</h3>
+                        <div class="row register-form">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Enter Question Title</label>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Enter Question Title *" formControlName="questionTitle" value="{{question.QuestionTitle}}" />
+                                </div>
+                                <div *ngIf="questionTitle.touched && questionTitle.invalid" class="alert alert-danger"> Question Title is Required </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Enter Question Detail</label>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Enter Question Detail *" formControlName="questionName" value="{{question.QuestionName}}" />
+                                    <div *ngIf=" questionName.touched && questionName.invalid " class="alert alert-danger "> Question Details is Required </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="form-group ">
+                                    <label>Enter Question Tags</label>
+                                </div>
+                                <div *ngIf="questionSave " class="register-form "> Question Update</div>
+                                <div *ngIf="formError " class="register-form "> Question Not Update</div>
+                            </div>
+
+                            <div class="col-md-8 ">
+                                <div class="form-group ">
+                                    <input type="text " class="form-control " placeholder="Enter Question Tags * " formControlName="questionTag" value="{{question.Tag.TagName}}" />
+                                    <div *ngIf="questionTag.touched && questionTag.invalid " class="alert alert-danger "> Question Tag is Required </div>
+                                </div>
+                                <input type="submit" value="Update Question" class="btnRegister" />
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
