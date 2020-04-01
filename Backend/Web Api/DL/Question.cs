@@ -27,10 +27,12 @@ namespace DL
 
         public int QuestionTagId { get; set; }
 
-        public virtual Tags Tags { get; set; }
+        // public virtual Tags Tags { get; set; }
 
         // [ForeignKey("UserId")]
-        //public virtual User User { get; set; }
+        public virtual User Users { get; set; }
+
+        public virtual Tags Tag { get; set; }
 
         public virtual IList<Answer> Answers { get; set; }
     }
