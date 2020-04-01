@@ -21,25 +21,30 @@ namespace BL
 
         public List<Question> getQuestions()
         {
-            var result = databaseContext.question.ToList();
+            var result = databaseContext.question.OrderByDescending(x => x.CreationDate).ToList();
             return result;
         }
 
-        public bool editQuestion(Question question, Tags tags)
+        public bool editQuestion(Question question)
         {
+            var local = databaseContext.question.FirstOrDefault(c => c.UserId == question.UserId);
+            
+            
+                databaseContext.Entry(local).State = EntityState.Detached;
+            
             databaseContext.Entry(question).State = EntityState.Modified;
-            tagsOperations.updateTags(tags);
+            
+            // tagsOperations.updateTags(tags);
             databaseContext.SaveChanges();
             return true;
         }
 
-        public bool addQuestion(Question question, Tags tags)
+        public int addQuestion(Question question)
         {
-            var tagId = tagsOperations.addTags(tags);
-            question.QuestionTagId = tagId;
             question.CreationDate = DateTime.Now;
             databaseContext.question.Add(question);
-            return true;
+            databaseContext.SaveChanges();
+            return question.QuestionId;
         }
 
         public Question getById (int id){
@@ -94,6 +99,12 @@ namespace BL
             {
                 return false;
             }
+        }
+
+        public List<Question> Search(string search)
+        {
+            var output = databaseContext.question.Where(x => x.QuestionName == search || x.QuestionTitle == search || x.Tag.TagName == search).ToList();
+            return output;
         }
     }
 }
