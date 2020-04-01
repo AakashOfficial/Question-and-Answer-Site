@@ -1,0 +1,51 @@
+<app-defaultnav></app-defaultnav>
+
+<div class='cards'>
+    <div class='card-header'>
+
+        <div class='row'>
+            <div class='col-md-2'>Filter by:</div>
+            <div class='col-md-4'>
+
+                <form (ngSubmit)="search()" [formGroup]="form">
+                    <input type='text' formControlName="searched" />
+                    <div *ngIf="searched.touched && searched.invalid" class="alert alert-danger">
+                        Required For Search
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br/>
+        <h4 style="text-align: center;"> Recent Asked Questions</h4>
+    </div>
+    <div class='card-body'>
+
+
+        <div class='table-responsive'>
+            <table class="table table-striped">
+
+                <thead style="background: skyblue;">
+                    <tr>
+                        <th>Title</th>
+                        <th style="text-align: center;"> Details</th>
+                        <th>Asked By</th>
+                        <th>Asked On</th>
+                        <th>Total Answers</th>
+                        <th>Tags</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let Product of questions |paginate: { itemsPerPage: 10, currentPage: p}'>
+                        <td> <a [routerLink]="['/viewanswer', Product.QuestionId]"> {{ Product.QuestionTitle }} </a> </td>
+                        <td>{{Product.QuestionName}}</td>
+                        <td><b>{{ Product.Users.UserFirstName  }} {{Product.Users.UserLastName}}</b></td>
+                        <td>{{Product.CreationDate}}</td>
+                        <td>{{Product.Answers.length}} Answers</td>
+                        <td><b>{{Product.Tag.TagName}}</b> </td>
+                    </tr>
+                </tbody>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </table>
+        </div>
+    </div>
+</div>
