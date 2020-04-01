@@ -1,0 +1,104 @@
+<app-navbar></app-navbar>
+
+<div style="margin-top:30px;margin-left:30px;margin-right:30px;">
+    <div class="row">
+        <div class="col-md-4">
+            <div class='cards' style="text-align: center; background-color: skyblue;">
+                <div class='card-header'>
+                    <b>Title</b>
+                </div>
+            </div>
+
+            <div class='cards' style="text-align: center;">
+                <h3>{{queStion.QuestionTitle}}</h3>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class='cards' style="text-align: center; background-color: skyblue;">
+                <div class='card-header'>
+                    <b>Description</b>
+                </div>
+            </div>
+
+            <div class='cards' style="text-align: center;">
+                <h3>{{queStion.QuestionName}}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:40px;margin-bottom:40px;"></div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class='cards' style="text-align: center; background-color: skyblue;">
+                <div class='card-header'>
+                    <b>Asked By</b>
+                </div>
+            </div>
+
+            <div class='cards' style="text-align: center;">
+                <h3>{{queStion.Users.UserFirstName}} {{ queStion.Users.UserLastName}}</h3>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class='cards' style="text-align: center; background-color: skyblue;">
+                <div class='card-header'>
+                    <b>Tags</b>
+                </div>
+            </div>
+
+            <div class='cards' style="text-align: center;">
+                <h3>{{queStion.Tag.TagName}}</h3>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class='cards' style="text-align: center; background-color: skyblue;">
+                <div class='card-header'>
+                    <b>Asked On</b>
+                </div>
+            </div>
+
+            <div class='cards' style="text-align: center;">
+                <h3>{{queStion.CreationDate}}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:40px;margin-bottom:40px;"></div>
+
+    <div class="card">
+        <div class="card-body">
+            <form novalidate (ngSubmit)="updateAnswer()" [formGroup]="form">
+                <div class="form-group row mb-2">
+                    <label class="col-md-2 col-form-label" for="answer">answer</label>
+                    <div class="col-md-8">
+                        <input class="form-control" id="answer" type="text" placeholder="answer (required)" formControlName="answerName" [ngClass]="{'is-invalid': (form.get('answerName').touched || form.get('answerName').dirty)
+                     && !form.get('answerName').valid }" value="{{answers.AnswerName}}" />
+                        <span class="invalid-feedback">
+                        <span *ngIf="form.get('answerName').errors?.required">
+                          Please Enter Answer
+                        </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-2">
+                    <div class="offset-md-2 col-md-4">
+                        <button class="btn btn-primary mr-3" type="submit" style="width:80px" [title]="form.valid ? 'Save your entered data' : 'Disabled until the form data is valid'" [disabled]="!form.valid">
+                            Update
+                    </button>
+                    </div>
+                </div>
+                <div class="form-group" *ngIf="answerSave">
+                    <div class="alert alert-success" style="margin-top:10px;"> Answer Updated</div>
+                </div>
+                <div class="form-group" *ngIf="formError">
+                    <div class="alert alert-danger" style="margin-top:10px;"> Answer Not Updated</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
