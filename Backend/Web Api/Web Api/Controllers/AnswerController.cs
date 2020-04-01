@@ -26,33 +26,39 @@ namespace Web_Api.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Answer> getAnswerById(int id)
+        public Answer getAnswerById(int id)
         {
-            return null;
+            var output = answerOperations.getAnswer(id);
+
+            return output;
         }
 
         [HttpPut]
-        public void activateAnswer(int id)
+        public bool activateAnswer(int id)
         {
             answerOperations.activateAnswer(id);
+            return true;
         }
 
         [HttpPut]
-        public void deactivateAnswer(int id)
+        public bool deactivateAnswer(int id)
         {
             answerOperations.deactivateAnswer(id);
+            return true;
         }
 
         [HttpPost]
-        public void addAnswer(Answer answer)
+        public bool addAnswer(Answer answer)
         {
-            answerOperations.addAnswer(answer);
+            var output = answerOperations.addAnswer(answer);
+            return output;
         }
 
         [HttpPut]
-        public void updateAnswer(Answer answer)
+        public bool updateAnswer(Answer answer)
         {
             answerOperations.editAnswer(answer);
+            return true;
         }
 
         [HttpDelete]
