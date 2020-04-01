@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -18,13 +19,14 @@ namespace BL
 
         public int addTags(Tags tags)
         {
-            var output = databaseContext.tags.Any(x => x.TagName == tags.TagName);
+            System.Diagnostics.Debug.WriteLine(tags);
+            var output = databaseContext.tags.Where(x => x.TagName == tags.TagName).ToList().Count;
 
-            if (output)
+            if (output > 0)
             {
                 return databaseContext.tags.FirstOrDefault(x => x.TagName == tags.TagName).QuestionTagId;
             }
-
+            tags.CreationDate = DateTime.Now;
             databaseContext.tags.Add(tags);
             databaseContext.SaveChanges();
 
