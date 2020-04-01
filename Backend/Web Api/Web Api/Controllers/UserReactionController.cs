@@ -21,18 +21,19 @@ namespace Web_Api.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<UserReaction> getAllReaction(int id)
+        public int getAllReaction(int id,int type)
         {
-            var output = userReactionOperation.getReaction(id);
+            var output = userReactionOperation.getReactionCount(id,type);
 
             return output;
         }
 
 
         [HttpPost]
-        public void addReaction(UserReaction userreaction)
+        public bool addReaction(UserReaction userreaction)
         {
-            userReactionOperation.addReaction(userreaction);
+            var output = userReactionOperation.addReaction(userreaction);
+            return output;
         }
 
         [HttpPut]
