@@ -16,9 +16,9 @@ export class UserReactionServie {
     constructor(private http: HttpClient) { }
 
     // get all answer by the questionId
-    getReactions(AnswerId) {
-        this.completeUrl = this.baseUrl + 'getAllReaction?id=' ;
-        return this.http.get(this.completeUrl+AnswerId)
+    getReactions(AnswerId,type) {
+        this.completeUrl = this.baseUrl + 'getAllReaction?id=' + AnswerId + "&type="+type ;
+        return this.http.get(this.completeUrl)
     }
     
     // add userreaction to the database
