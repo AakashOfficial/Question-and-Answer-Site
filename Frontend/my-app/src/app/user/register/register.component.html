@@ -1,0 +1,55 @@
+<app-defaultnav></app-defaultnav>
+
+<div style="margin-left:25%;">
+
+    <div class="col-4">
+        <h2 style="text-align:center">Registeration </h2>
+    </div>
+
+    <div class="row m-4">
+        <div class="col-5">
+            <div class="login-dark p-3 shadow-lg rounded">
+                <div class="pt-3">
+                    <h2 class="text-white ">Sign Up</h2>
+                </div>
+                <form class="mt-5" (ngSubmit)="Save()" [formGroup]="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-sm bg-light" placeholder="User First Name" formControlName="userFirstName" id="userFirstName">
+                        <div *ngIf="userFirstName.touched && userFirstName.invalid" class="alert alert-danger"> User First Name is Required </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-sm bg-light" placeholder="User Last Name" formControlName="userLastName" id="userLastName">
+                        <div *ngIf="userLastName.touched && userLastName.invalid" class="alert alert-danger"> Last Name is Required </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control form-control-sm bg-light" placeholder="Email Id" formControlName="userEmail" id="userEmail">
+                        <div *ngIf="userEmail.touched && userEmail.invalid" class="alert alert-danger">
+                            <div *ngIf="userEmail.errors.required">Email Is Required</div>
+                            <div *ngIf="userEmail.errors.email">Email Is Invalid</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control form-control-sm bg-light" placeholder="Password" formControlName="userPassword" id="userPassword">
+                        <div *ngIf="userPassword.touched && userPassword.invalid" class="alert alert-danger"> Password is Required </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <button class="btn btn-sm btn-light col">
+                        Register
+                    </button>
+                    </div>
+
+                    <div class="form-group" *ngIf="formError">
+                        <div class="alert alert-danger" style="margin-top:10px;"> Not Registered </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <p class="text-white text-center">
+                            <a routerLink="/login" class="text-warning">Click here to Login</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
