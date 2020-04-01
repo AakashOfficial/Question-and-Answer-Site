@@ -55,7 +55,7 @@ import { AddanswerComponent } from './answer/addanswer/addanswer.component';
       { path: "login" , component : LoginComponent},
       { path: "register" , component : RegisterComponent},
       { path: "addquestion" , component : AddquestionComponent},
-      { path: "editquestion" , component : EditquestionComponent},
+      { path: "editquestion/:questionId" , component : EditquestionComponent},
       { path: "question" , component : QuestionComponent},
       { path: "viewanswer/:questionId" , component : ViewanswerComponent},
       { path: "editanswer/:questionId/:answerId" , component : EditanswerComponent},
