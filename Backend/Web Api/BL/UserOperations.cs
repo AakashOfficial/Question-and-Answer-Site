@@ -25,6 +25,7 @@ namespace BL
             System.Diagnostics.Debug.WriteLine(userData);
             if (userData == 0)
             {
+                user.CreationDate = DateTime.Now;
                 databaseContext.user.Add(user);
                 databaseContext.SaveChanges();
                 return true;
@@ -55,17 +56,18 @@ namespace BL
             return result;
         }
 
-        public int validate(string email, string password)
+        public User validate(string email, string password)
         {
             var result = databaseContext.user.ToList().Where(d => d.UserEmail == email && d.UserPassword == password).FirstOrDefault();
-            if(result != null)
+            return result;
+            /*if(result != null)
             {
                 return result.UserId;
             }
             else
             {
                 return 0;
-            }
+            }*/
             
         }
     }
