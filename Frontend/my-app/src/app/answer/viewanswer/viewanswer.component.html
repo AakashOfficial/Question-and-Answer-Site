@@ -1,0 +1,38 @@
+<app-navbar *ngIf="userId > 0"></app-navbar>
+
+<app-defaultnav *ngIf="!userId"></app-defaultnav>
+
+<div style="margin-top:30px;margin-left:40px;margin-right:40px">
+    <div class='card-body'>
+        <div class='table-responsive'>
+            <div class="row">
+                <div class="col-md-3"> Answers {{answers.Count}} </div>
+            </div>
+
+            <strong>Answers</strong>
+            <table class="table table-striped">
+                <thead style="background: skyblue;">
+                    <tr>
+                        <th>Title</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor='let Product of answers'>
+                        <td> {{ Product.AnswerName }}
+                            <br/>Given By : &nbsp; {{Product.User.UserFirstName}} {{Product.User.UserLastName}}
+                            <br/>Given On : &nbsp; {{Product.CreationDate}}
+                            <br/>Upvote : {{getVotes(Product.AnswerId,1)}}
+                            <br/>Devote : {{getVotes(Product.AnswerId,0)}}
+                            <br/>
+                            <a *ngIf="onCheck(Product.User.UserId)" [routerLink]="['/editanswer', Product.QuestionId,Product.Answer.AnswerId]"> Edit </a>
+                            <button *ngIf="userId > 0" (click)="onUpvote(Product.AnswerId)">Upvote</button>
+                            <button *ngIf="userId > 0" (click)="onDevote(Product.AnswerId)">Devote</button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
