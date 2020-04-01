@@ -24,7 +24,8 @@ namespace BL
         }
         public List<Answer> getAnswers(int id)
         {
-            var result = databaseContext.answer.Where(d => d.QuestionId == id && d.AnswerActive == 1).ToList();
+            var result = databaseContext.answer.Where(d => d.QuestionId == id && d.AnswerActive == 1).OrderByDescending(x => x.CreationDate).ToList();//.ThenByDescending(x=> x.CreationDate)
+
             return result;
         }
 
