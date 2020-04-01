@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms' ;
+import {NgxPaginationModule} from 'ngx-pagination'; 
+import {Ng2SearchPipeModule} from 'ng2-search-filter'; 
 
 import {RouterModule} from '@angular/router';
 import {HttpClientModule,HttpClient,HttpHeaders} from '@angular/common/http';
@@ -17,6 +19,9 @@ import { NavbarComponent } from './home/navbar/navbar.component';
 import { DefaultComponent } from './default/default.component';
 import { DefaultnavComponent } from './default/defaultnav/defaultnav.component';
 import { MyquestionComponent } from './question/myquestion/myquestion.component';
+import { ViewanswerComponent } from './answer/viewanswer/viewanswer.component';
+import { EditanswerComponent } from './answer/editanswer/editanswer.component';
+import { AddanswerComponent } from './answer/addanswer/addanswer.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +35,14 @@ import { MyquestionComponent } from './question/myquestion/myquestion.component'
     NavbarComponent,
     DefaultComponent,
     DefaultnavComponent,
-    MyquestionComponent
+    MyquestionComponent,
+    ViewanswerComponent,
+    EditanswerComponent,
+    AddanswerComponent,
   ],
   imports: [
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -47,6 +57,9 @@ import { MyquestionComponent } from './question/myquestion/myquestion.component'
       { path: "addquestion" , component : AddquestionComponent},
       { path: "editquestion" , component : EditquestionComponent},
       { path: "question" , component : QuestionComponent},
+      { path: "viewanswer/:questionId" , component : ViewanswerComponent},
+      { path: "editanswer/:questionId/:answerId" , component : EditanswerComponent},
+      { path: "addanswer/:questionId" , component : AddanswerComponent},
     ])
   ],
   providers: [],
