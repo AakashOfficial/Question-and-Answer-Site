@@ -8,7 +8,7 @@ using DL;
 
 namespace BL
 {
-    class TagsOperations
+    public class TagsOperations
     {
         private QAContext databaseContext;
 
