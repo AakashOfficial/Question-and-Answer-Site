@@ -17,6 +17,11 @@ namespace BL
             databaseContext = new QAContext();
         }
 
+        public Answer getAnswer(int id)
+        {
+            var result = databaseContext.answer.FirstOrDefault(d => d.AnswerId == id && d.AnswerActive == 1);
+            return result;
+        }
         public List<Answer> getAnswers(int id)
         {
             var result = databaseContext.answer.Where(d => d.QuestionId == id && d.AnswerActive == 1).ToList();
@@ -48,6 +53,7 @@ namespace BL
         // for add the answer
         public bool addAnswer(Answer answer)
         {
+            answer.CreationDate = DateTime.Now;
             databaseContext.answer.Add(answer);
             databaseContext.SaveChanges();
             return true;
