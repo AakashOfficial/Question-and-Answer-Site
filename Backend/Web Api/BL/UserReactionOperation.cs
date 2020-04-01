@@ -22,8 +22,19 @@ namespace BL
             return output;
         }
 
+        public int getReactionCount(int id,int type)
+        {
+            var output = databaseContext.userreaction.Where(d => d.AnswerId == id && d.ReactionActive == 1 && d.ReactionType == type).ToList().Count();
+            return output;
+        }
+
         public bool addReaction(UserReaction userreaction)
         {
+            var output = databaseContext.userreaction.Where(d => d.AnswerId == userreaction.AnswerId && d.UserId == userreaction.UserId).ToList().Count();
+            if(output > 0)
+            {
+                return false;
+            }
             userreaction.CreationDate = DateTime.Now;
             databaseContext.userreaction.Add(userreaction);
             databaseContext.SaveChanges();
@@ -104,6 +115,12 @@ namespace BL
                 databaseContext.SaveChanges();
             }
             return true;
+        }
+
+        public int Votes(int id, int type)
+        {
+            int count = databaseContext.userreaction.Where(d => d.AnswerId == id && d.ReactionActive == 1 && d.ReactionType == type).ToList().Count();
+            return count;
         }
     }
 }
