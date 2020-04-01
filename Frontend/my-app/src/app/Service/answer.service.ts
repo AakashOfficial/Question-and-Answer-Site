@@ -85,4 +85,10 @@ export class AnswerService {
         this.completeUrl = this.baseUrl + 'deleteReaction' ;
         return this.http.delete(this.completeUrl+id) 
     }
+
+    // UserData with Reaction
+    getAnswerVote(id:number){
+        this.completeUrl = this.baseUrl + 'AnswerData?id=' ;
+        return this.http.get(this.completeUrl+ id) 
+    }
 }
