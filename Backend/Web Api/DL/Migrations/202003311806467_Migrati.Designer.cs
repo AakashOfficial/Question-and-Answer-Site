@@ -7,13 +7,13 @@ namespace DL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class Finalmig : IMigrationMetadata
+    public sealed partial class Migrati : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Finalmig));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Migrati));
         
         string IMigrationMetadata.Id
         {
-            get { return "202003311714191_Finalmig"; }
+            get { return "202003311806467_Migrati"; }
         }
         
         string IMigrationMetadata.Source
