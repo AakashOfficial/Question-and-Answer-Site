@@ -24,6 +24,7 @@ namespace BL
 
         public bool addReaction(UserReaction userreaction)
         {
+            userreaction.CreationDate = DateTime.Now;
             databaseContext.userreaction.Add(userreaction);
             databaseContext.SaveChanges();
             return true;
