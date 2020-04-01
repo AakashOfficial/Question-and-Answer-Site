@@ -29,7 +29,7 @@ namespace Web_Api.Controllers
 
         // GET api/<controller>/5
         [HttpGet]
-        public IEnumerable<Question> getQuestionById(int id)
+        public Question getQuestionById(int id)
         {
             var result = questionoperation.getById(id);
             return result;
@@ -37,16 +37,19 @@ namespace Web_Api.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public void AddQuestion(Question question)
+        public void AddQuestion(QuestionTag questiontag)
         {
-            questionoperation.addQuestion(question);
+            Question question = questiontag.question;
+            Tags tags = questiontag.tags;
+            System.Diagnostics.Debug.WriteLine("Aa Rhi");
+            questionoperation.addQuestion(question,tags);
         }
 
         [HttpPut]
         // PUT api/<controller>/5
-        public void updateQuestion(Question question)
+        public void updateQuestion(Question question, Tags tags)
         {
-            questionoperation.editQuestion(question);
+            questionoperation.editQuestion(question,tags);
         }
 
         [HttpPut]
