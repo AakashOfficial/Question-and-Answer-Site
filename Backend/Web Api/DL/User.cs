@@ -28,6 +28,6 @@ namespace DL
         public int UserActive { get; set; }
 
         public DateTime CreationDate { get; set; }
-        public virtual IList<Question> Questions { get; set; }
+       // public virtual IList<Question> Questions { get; set; }
     }
 }
