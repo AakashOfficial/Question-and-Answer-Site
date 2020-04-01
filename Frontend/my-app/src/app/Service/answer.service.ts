@@ -27,8 +27,9 @@ export class AnswerService {
 
     //get answer on basis of answerId 
     getAnswerById(id:number) {
-        this.completeUrl = this.baseUrl + 'getAnswerById?id=' ;
-        return this.http.get(this.completeUrl+id)
+        this.completeUrl = this.baseUrl + 'getAnswerById?id=' + id ;
+        //console.log(this.completeUrl);
+        return this.http.get(this.completeUrl)
     }
 
     // to save the answer in backend
