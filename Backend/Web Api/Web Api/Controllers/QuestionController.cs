@@ -37,19 +37,18 @@ namespace Web_Api.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public void AddQuestion(QuestionTag questiontag)
+        public int AddQuestion(Question question)
         {
-            Question question = questiontag.question;
-            Tags tags = questiontag.tags;
-            System.Diagnostics.Debug.WriteLine("Aa Rhi");
-            questionoperation.addQuestion(question,tags);
+            var output = questionoperation.addQuestion(question);
+            return output;
         }
 
         [HttpPut]
         // PUT api/<controller>/5
-        public void updateQuestion(Question question, Tags tags)
+        public bool updateQuestion(Question question)
         {
-            questionoperation.editQuestion(question,tags);
+            var output = questionoperation.editQuestion(question);
+            return output;
         }
 
         [HttpPut]
@@ -69,6 +68,20 @@ namespace Web_Api.Controllers
         public void deleteQuestion(int id)
         {
             questionoperation.deleteQuestion(id);
+        }
+
+        public int saveTags(Tags tag)
+        {
+            TagsOperations tagOperations = new TagsOperations();
+            var output = tagOperations.addTags(tag);
+            return output;
+        }
+
+        [HttpGet]
+        public List<Question> Search(string search)
+        {
+            var output = questionoperation.Search(search);
+            return output;
         }
     }
 }
