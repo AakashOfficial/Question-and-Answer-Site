@@ -37,12 +37,13 @@ namespace BL
         {
             var tagId = tagsOperations.addTags(tags);
             question.QuestionTagId = tagId;
+            question.CreationDate = DateTime.Now;
             databaseContext.question.Add(question);
             return true;
         }
 
-        public IEnumerable<Question> getById (int id){
-            var output = databaseContext.question.ToList().Where(d => d.QuestionId == id);
+        public Question getById (int id){
+            var output = databaseContext.question.Where(d => d.QuestionId == id).FirstOrDefault();
             return output;
         }
 
