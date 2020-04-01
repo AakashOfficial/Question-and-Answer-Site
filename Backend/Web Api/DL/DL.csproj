@@ -52,9 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Answer.cs" />
-    <Compile Include="Migrations\202003311714191_Finalmig.cs" />
-    <Compile Include="Migrations\202003311714191_Finalmig.designer.cs">
-      <DependentUpon>202003311714191_Finalmig.cs</DependentUpon>
+    <Compile Include="Migrations\202003311806467_Migrati.cs" />
+    <Compile Include="Migrations\202003311806467_Migrati.designer.cs">
+      <DependentUpon>202003311806467_Migrati.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,8 +69,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003311714191_Finalmig.resx">
-      <DependentUpon>202003311714191_Finalmig.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003311806467_Migrati.resx">
+      <DependentUpon>202003311806467_Migrati.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
