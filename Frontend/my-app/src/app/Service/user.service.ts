@@ -17,7 +17,6 @@ export class UserService {
 
     addUser(user:User) {
         this.completeUrl = this.baseUrl + 'addUser';
-        console.log("Called") ;
         return this.http.post(this.completeUrl, user) 
     }
 
