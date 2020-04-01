@@ -29,15 +29,15 @@ export class QuestionService {
     }
 
     // add question to the database
-    AddQuestion(question:Question,tag:Tags) {
+    AddQuestion(question:Question) {
         this.completeUrl = this.baseUrl + 'AddQuestion';
-        return this.http.post(this.completeUrl, {question,tag}) 
+        return this.http.post(this.completeUrl, question) 
     }
 
     // update the question
-    UpdateQuestion(question:Question,tag:Tags) {
+    UpdateQuestion(question:Question) {
         this.completeUrl = this.baseUrl + 'updateQuestion';
-        return this.http.put(this.completeUrl, {question,tag}) 
+        return this.http.put(this.completeUrl, question) 
     }
 
     // activate the question by questionId
@@ -57,4 +57,16 @@ export class QuestionService {
         this.completeUrl = this.baseUrl + 'deleteQuestion?id=';
         return this.http.delete(this.completeUrl+id) 
     }
+
+    // add Tags to the database
+    saveTags(tags:Tags) {
+        this.completeUrl = this.baseUrl + 'saveTags';
+        return this.http.post(this.completeUrl, tags) 
+    }
+
+    Search(searchval){
+        this.completeUrl = this.baseUrl + 'Search?search='+searchval;
+        return this.http.get(this.completeUrl) 
+    }
+    
 }
