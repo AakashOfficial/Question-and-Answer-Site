@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Migrati : DbMigration
+    public partial class Second : DbMigration
     {
         public override void Up()
         {
@@ -18,7 +18,9 @@
                         QuestionId = c.Int(nullable: false),
                         UserId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.AnswerId);
+                .PrimaryKey(t => t.AnswerId)
+                .ForeignKey("dbo.Questions", t => t.QuestionId, cascadeDelete: true)
+                .Index(t => t.QuestionId);
             
             CreateTable(
                 "dbo.UserReactions",
@@ -41,14 +43,13 @@
                     {
                         QuestionId = c.Int(nullable: false, identity: true),
                         QuestionName = c.String(nullable: false),
-                        QuestionTitle = c.String(),
                         CreationDate = c.DateTime(nullable: false),
                         QuestionActive = c.Int(nullable: false),
                         UserId = c.Int(nullable: false),
-                        QuestionImage = c.String(),
-                        QuestionTagId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.QuestionId);
+                .PrimaryKey(t => t.QuestionId)
+                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId);
             
             CreateTable(
                 "dbo.Tags",
@@ -56,10 +57,13 @@
                     {
                         QuestionTagId = c.Int(nullable: false, identity: true),
                         TagName = c.String(),
+                        QuestionId = c.Int(nullable: false),
                         CreationDate = c.DateTime(nullable: false),
                         TagActive = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.QuestionTagId);
+                .PrimaryKey(t => t.QuestionTagId)
+                .ForeignKey("dbo.Questions", t => t.QuestionId, cascadeDelete: true)
+                .Index(t => t.QuestionId);
             
             CreateTable(
                 "dbo.Users",
@@ -80,8 +84,14 @@
         
         public override void Down()
         {
+            DropForeignKey("dbo.Questions", "UserId", "dbo.Users");
+            DropForeignKey("dbo.Tags", "QuestionId", "dbo.Questions");
+            DropForeignKey("dbo.Answers", "QuestionId", "dbo.Questions");
             DropForeignKey("dbo.UserReactions", "AnswerId", "dbo.Answers");
+            DropIndex("dbo.Tags", new[] { "QuestionId" });
+            DropIndex("dbo.Questions", new[] { "UserId" });
             DropIndex("dbo.UserReactions", new[] { "AnswerId" });
+            DropIndex("dbo.Answers", new[] { "QuestionId" });
             DropTable("dbo.Users");
             DropTable("dbo.Tags");
             DropTable("dbo.Questions");
